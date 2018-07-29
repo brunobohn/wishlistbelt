@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'wishapp/css/main.css' %}" media="screen" title="no title"  charset="utf-8">
+    <title>Your Page</title>
+</head>
+<body>
+        <div class="top"><h1>Wecolme: {{name}}!</h1>
+        <a class="button2" href="/logout">Logout</a>
+        </div>
+        <h3>Your Wish List:</h3>
+            <table>
+            <thead>
+                <tr>
+                <th>Item</th>
+                <th>Added By</th>
+                <th>Action</th>
+             </tr>
+            </thead>
+            <tbody>
+        {%for product in products %}
+        <tr>
+            <td><a href="/product/{{product.id}}">{{product.item_name}}</a></td>
+            <td>{{product.user.name}}</td>
+            {% if data == product.user %}
+            <td><a href="/product/confirm_delete_product/{{product.id}}">Delete</a></td>
+            {% else %}
+            <td><a href="/product/confirm_remove_product/{{product.id}}">Remove</a></td>
+        </tr>
+        {% endif %}
+        {%endfor%}   
+    </tbody>
+    </table>
+    <h3>Other Users' Wish List:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Added By</th>
+                <th>Action</th>
+             </tr>
+            </thead>
+            <tbody>
+                {%for x in users %}
+                {% ifchanged x.item_name %} 
+            <tr>
+                <td><a href="/product/{{x.id}}">{{x.item_name}}</a></td>
+                <td>{{x.user.name}}</td>
+                <td><a href="/product/confirm_add_product/{{x.id}}">Add to my list<a></td>
+                    {% endifchanged %}
+                </tr>
+                    {%endfor%}   
+      
+        </table>
+        <div class="buttonadd"><a class="button1" href="/reg/{{id}}/create">Add Item</a></div>
+
+    </body>
+            </html>

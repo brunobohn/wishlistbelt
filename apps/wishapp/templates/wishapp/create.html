@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'wishapp/css/main.css' %}" media="screen" title="no title"  charset="utf-8">
+    <title>Add New Product</title>
+</head>
+<body>
+    <div class="top"><h1>Create a New Wish List Item</h1>
+    <a class="button3" href="/reg/{{id}}">Home</a>
+    <a class="button4" href="/logout">Logout</a>
+    </div>
+    <form action="/addproduct" method="POST">
+        {% csrf_token %}
+        <p>
+            <label for="product">Add Product:</label>
+            <input type="text" name="product">
+        <input type="submit" value="submit">
+        </p>
+    </form>
+    <div id="messages">
+            {%if messages%}
+            <ul>
+              {%for message in messages%}
+                <li>
+                  {{message}}
+                </li>
+              {% endfor %}
+              </ul>
+            {% endif %}
+            </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+
+.register{
+    width: 500px;
+    border: solid 3px black;
+    padding: 0px 20px 20px 20px;
+    display: inline-block; 
+    margin-left: 300px;
+}
+
+.login{
+    width: 300px;
+    border: solid 3px black;
+    padding: 0px 20px 20px 20px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+}
+
+.title{
+    margin-left: 600px;
+    color: lightslategray
+
+}
+
+.button2{
+    color: blue;
+    font-size: 20px;
+    border: solid 2px black;
+    padding: 5px 5px 5px 5px;
+    margin-left:408px;
+
+    margin-top: 0px;
+ 
+}
+
+.top{
+    width: 900px;
+    display: inline-block;
+}
+
+.top h1{
+        display: inline-block;
+
+}
+
+.button1 {
+    color: blue;
+    font-size: 20px;
+    border: solid 2px black;
+    padding: 5px 5px 5px 5px;
+    margin-top: 20px;
+    margin-left: 810px;
+}
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 900px;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.buttonadd{
+    margin-top: 20px;
+}
+
+.button3 {
+    color: blue;
+    font-size: 20px;
+    border: solid 2px black;
+    padding: 5px 5px 5px 5px;
+    margin-left: 350px;
+}
+
+.button4 {
+    color: blue;
+    font-size: 20px;
+    border: solid 2px black;
+    padding: 5px 5px 5px 5px;
+    margin-left: 10px;
+}
